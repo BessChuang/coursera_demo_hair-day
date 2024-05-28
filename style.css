@@ -1,0 +1,584 @@
+/* css reset  */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    /* for oberving */
+    /* border: 2px solid red; */
+}
+
+/* color theme */
+:root {
+    --logoOrange: #d0604c;
+    --importantColor: #5ebed1;
+    --alikeColor1: #fad99b;
+    --alikeColor2: #e48eac;
+}
+
+/* height setting */
+body {
+    height: 100dvh;
+    background: var(--alikeColor1);
+    /* padding: 0.5rem; */
+    padding: 0.25rem 1rem 0.75rem 1rem;
+    /* when width bigger than 200px, fix width to 2000px. For oher circumstances,100dvw*/
+    min-width: 300px;
+    width: clamp(100dvw, 100%, 2000px);
+    margin: auto;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--logoOrange);
+    padding: 0.25rem;
+    font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1.2rem;
+    color: var(--logoOrange);
+    padding: 0.25rem;
+    font-weight: 600;
+}
+
+
+/* nav bar, layout as "mobile device"  */
+.headingContainerWrap,
+main {
+    margin: auto;
+    /* position: center; */
+    padding: 0.25rem;
+    width: 100%;
+}
+
+
+.briefIntro * {
+    color: var(--logoOrange);
+    font-weight: 900;
+    padding: 0.25rem;
+    text-align: center;
+}
+
+
+nav * {
+    background: var(--importantColor);
+    color: antiquewhite;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    font-weight: 900;
+
+}
+
+.navContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 100%;
+    justify-content: flex-start;
+    min-width: 10rem;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    border: 2px dashed antiquewhite;
+    min-width: 14rem;
+}
+
+.navContainer a {
+    text-decoration: 2px solid underline;
+    text-underline-offset: 0.25rem;
+}
+
+/* deal with 2nd level in "Services" */
+.navService {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+
+/* .navServiceParent {
+    border: 2px solid blue;
+}
+
+.navServiceParent span {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 0.1rem 0.2rem;
+    margin-left: 0.5rem;
+}
+
+.navService.notDispaly {
+    display: none;
+} */
+
+.navService>li {
+    min-width: 11rem;
+    width: 100%;
+    padding: 0.25rem;
+    border: transparent;
+}
+
+.navService a {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* logo's height */
+.headingLogoContainer {
+    height: 20dvh;
+    padding: 1rem;
+    width: 100%;
+}
+
+img.headingLogo {
+    height: 100%;
+    margin: auto;
+    display: block;
+}
+
+.footerLogoContainer {
+    height: 5dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* deal with copyright text  */
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--logoOrange);
+}
+
+img.footerLogo {
+    width: 40%;
+    display: block;
+    margin-left: 0.5rem;
+}
+
+footer p {
+    font-size: 0.6rem;
+}
+
+
+/* add border-radius to imgs*/
+.imgRadiusBox {
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+
+
+/* padding */
+.imgRadiusBox+p,
+section .imgRadiusBox+div,
+section~p,
+#workTeam ul {
+    padding: 1rem;
+}
+
+#workTeam li em,
+#workTeam li {
+    color: var(--logoOrange);
+    font-weight: 600;
+    padding-top: 0.25rem;
+    font-style: normal;
+}
+
+#workTeam p {
+    padding: 0.25rem;
+    padding-left: 1rem;
+}
+
+#workTeam p::first-line {
+    text-decoration: underline double;
+}
+
+/* banner  */
+
+.mainContainer {
+    padding: 1rem;
+    width: 100%;
+}
+
+.bannerBox {
+    border: 0.1rem solid var(--alikeColor2);
+}
+
+.banner {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    padding: 1rem;
+
+}
+
+.bannerToBeInserted {
+    width: 100%;
+}
+
+
+/* article  */
+article {
+    padding: 0.5rem;
+    border: 0.1rem solid var(--alikeColor2);
+}
+
+/* article area,layout as "mobile device"  */
+.articleContainer {
+    width: 100%;
+    display: flex;
+    /* 1 div at the same time*/
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1rem;
+
+}
+
+article h3 {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    height: 6rem;
+    background: var(--logoOrange);
+    color: antiquewhite;
+    padding: 0.5rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    text-align: left;
+    border: 0.1rem solid var(--alikeColor2);
+}
+
+.author,
+.date {
+    text-align: right;
+    padding: 0.25rem;
+}
+
+article p {
+    text-align: justify;
+    text-indent: -1rem;
+    padding: 0.5rem;
+    padding-left: 2rem;
+}
+
+article p:nth-child(4) {
+    height: 10rem;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+
+article p:nth-child(4)::first-letter {
+    font-weight: 600;
+}
+
+
+/* a link....LVAH: LINK,VISITED, ACTIVE, HOVER,  */
+article {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    margin: 0.25rem;
+    font-weight: 400;
+    background: antiquewhite;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+section {
+    margin: 1rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    width: inherit;
+}
+
+
+section h2,
+#contact h2 {
+    background: var(--importantColor);
+    color: antiquewhite;
+    padding: 0.5rem;
+}
+
+
+
+section a {
+    padding: 0.1rem;
+    font-weight: 400;
+}
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    flex-direction: nowrap;
+    background: antiquewhite;
+    /* justify-self: center; */
+    padding: 1rem;
+}
+
+.contact h4 {
+    padding: 0.25rem;
+}
+
+.contact p {
+    text-indent: 1rem;
+    padding: 0.25rem;
+}
+
+
+/*consistency... */
+.flexRow {
+    display: flex;
+    flex-direction: column;
+    flex-direction: nowrap;
+    background: antiquewhite;
+    align-items: center;
+    justify-self: center;
+}
+
+.flexRow p,
+.flexRow ul {
+    width: 80%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.flexRow ul p {
+    width: 100%;
+}
+
+.flexRowAlike {
+    background: antiquewhite;
+}
+
+/* styling of a link  */
+article a:link,
+section a:link {
+    color: var(--logoOrange);
+}
+
+article a:visited,
+section a:visited {
+    color: var(--importantColor);
+}
+
+article a:active,
+section a:active {
+    background: var(--alikeColor2);
+    font-weight: 900;
+}
+
+article a:hover,
+section a:hover {
+    color: var(--logoOrange);
+    font-weight: 900;
+}
+
+
+/* other things added */
+
+.manicureImageContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+    /* padding: 0.5rem; */
+}
+
+.manicureImageContainer img {
+    width: 50%;
+    padding: 0;
+    display: block;
+    object-fit: cover;
+    position: top right;
+}
+
+.note {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 1.25rem;
+    color: antiquewhite;
+    padding: 1rem;
+    text-align: center;
+    /* background */
+    background: var(--alikeColor2);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 0.25rem dashed var(--logoOrange);
+
+}
+
+.note span {
+    font-weight: 900;
+    display: block;
+    padding: 0.25rem;
+}
+
+.note p {
+    font-weight: 600;
+    font-size: 1rem;
+    /* seems the width inherits from somewhere; */
+    width: 100%;
+}
+
+iframe {
+    padding: 1rem;
+}
+
+.backTop {
+    width: 5rem;
+    height: 5rem;
+    background: var(--importantColor);
+    /* border: 0.25rem solid var(--importantColor); */
+    border-radius: 50%;
+    position: sticky;
+    left: 90%;
+    bottom: 4%;
+
+}
+
+.backTop a::before {
+    position: sticky;
+    /* left: 50%;
+    bottom: 50%; */
+    content: "";
+    display: block;
+    border: 1rem solid;
+    border-color: transparent transparent antiquewhite transparent;
+    width: 0;
+    height: 0;
+    /* transform: rotate(0.5turn); */
+    transform: translate(10%, -5%);
+}
+
+.backTop a {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+/* DIZZY... */
+/* when width>400px, layout as PC  */
+@media (min-width:450px) {
+    .footerLogoContainer {
+        gap: 2rem;
+    }
+
+    footer p {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (min-width:500px) {}
+
+@media (min-width:768px) {
+
+    .briefIntro *,
+    nav *,
+    .footerLogoContainer {
+        font-size: 1.75rem;
+    }
+
+    .navContainer {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        /* flex-wrap: nowrap; */
+    }
+
+    .navContainer li {
+        width: 100%;
+    }
+
+    .navContainer a {
+        display: block;
+        text-align: center;
+    }
+
+    .navServiceParent {
+        position: relative;
+    }
+
+    .navContainer span {
+        font-size: 1.2rem;
+        display: inline-block;
+        margin-left: 0.25rem;
+        /* adjust the position of + symbol  */
+        position: absolute;
+        top: 30%;
+        right: 8%;
+    }
+
+
+    .articleContainer {
+        /* 3 div at the same time*/
+        flex-direction: row;
+    }
+
+
+    img.footerLogo {
+        height: 100%;
+        width: auto;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (min-width:960px) {
+    .navContainer {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .manicureImageContainer {
+        width: 60%;
+        max-width: 600px;
+    }
+
+    #workTeam img {
+        max-width: 600px;
+    }
+
+    .note p {
+        font-size: 0.8rem;
+    }
+
+    .flexRow p,
+    .flexRow ul {
+        width: 60%;
+        min-width: 370px;
+    }
+}
+
+@media (min-width:1000px) {
+    .flexRow {
+        flex-direction: row;
+        flex-direction: nowrap;
+    }
+
+    .flexRow p,
+    .flexRow ul {
+        width: 50%;
+        min-width: 370px;
+    }
+}
